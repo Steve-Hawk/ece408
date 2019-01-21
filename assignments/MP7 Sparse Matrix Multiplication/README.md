@@ -1,23 +1,30 @@
-Sparse Matrix Multiplication (JDS)
-Objective
+# Sparse Matrix Multiplication (JDS)
+
+## Objective
+
 The purpose of this lab is to implement a SpMV (Sparse Matrix Vector Multiplication) kernel for an input sparse matrix based on the Jagged Diagonal Storage (JDS) transposed format.
 
-Prerequisites
+## Prerequisites
+
 Before starting this lab, make sure that:
 
-You have completed all week 8 lecture videos
-You have completed MP-6
-Instructions
+- You have completed all week 8 lecture videos
+- You have completed MP-6
+
+
+## Instructions
+
 Edit the kernel and the host function in the file to implement sparse matrix-vector multiplication using the JDS format. The kernel shall be launched so that each thread will generate one output Y element. The kernel should have each thread to use the appropriate elements of the JDS data array, the JDS col index array, JDS row index array, and the JDS transposed col ptr array to generate one Y element.
 
-Instructions about where to place each part of the code is demarcated by the //@@ comment lines.
+Instructions about where to place each part of the code is demarcated by the `//@@` comment lines.
 
-Suggestions
-The system’s autosave feature is not an excuse to not backup your code and answers to your questions regularly.
+## Suggestions
+
+The system's autosave feature is not an excuse to not backup your code and answers to your questions regularly.
 
 If you have not done so already, watch the tutorial videos.
 
-Do not modify the template code provided -- only insert code where the //@@ demarcation is placed
+Do not modify the template code provided -- only insert code where the `//@@` demarcation is placed
 
 Develop your solution incrementally and test each version thoroughly before moving on to the next version
 
@@ -35,6 +42,7 @@ Make sure that you test your program using all the datasets provided (the datase
 
 Check for errors: for example, when developing CUDA code, one can check for if the function call succeeded and print an error if not via the following macro:
 
+```
 #define wbCheck(stmt) do {                                                    \
         cudaError_t err = stmt;                                               \
         if (err != cudaSuccess) {                                             \
@@ -43,6 +51,8 @@ Check for errors: for example, when developing CUDA code, one can check for if t
             return -1;                                                        \
         }                                                                     \
     } while(0)
+```
+
 An example usage is wbCheck(cudaMalloc(...)). A similar macro can be developed while programming OpenCL code.
 
 Plagiarism
